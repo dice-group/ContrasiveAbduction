@@ -1,0 +1,122 @@
+Ontology file path = E:/Workspace_Dice/DataSource/family-benchmark_rich_background.owl
+Name space = http://www.benchmark.org/family#
+
+Query 1 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F10M171
+Missing Indivudual = F10F172
+
+Query 2 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F10M171
+Missing Indivudual = F10F179
+
+Query 3 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F10M171
+Missing Indivudual = F10F186
+
+Query 4 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F1M4
+Missing Indivudual = F10F172
+
+Query 5 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F1M4
+Missing Indivudual = F10F179
+
+Query 6 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F1M4
+Missing Indivudual = F10F186
+
+Query 7 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F2M9
+Missing Indivudual = F10F172
+
+Query 8 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F2M9
+Missing Indivudual = F10F179
+
+Query 9 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F2M9
+Missing Indivudual = F10F186
+
+Query 10 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F6M78
+Missing Indivudual = F10F172
+
+Query 11 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F6M78
+Missing Indivudual = F10F179
+
+Query 12 = Male and hasChild some (Female and PersonWithASibling)
+Individual name = F6M78
+Missing Indivudual = F10F186
+
+Query 13 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F2F15
+Missing Indivudual = F2F10
+
+Query 14 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F2F15
+Missing Indivudual = F2F17
+
+Query 15 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F2F15
+Missing Indivudual = F1F5
+
+Query 16 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F6F77
+Missing Indivudual = F2F10
+
+Query 17 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F6F77
+Missing Indivudual = F2F17
+
+Query 18 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F6F77
+Missing Indivudual = F1F5
+
+Query 19 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F7F121
+Missing Indivudual = F2F10
+
+Query 20 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F7F121
+Missing Indivudual = F2F17
+
+Query 21 = Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual name = F7F121
+Missing Indivudual = F1F5
+
+Query 22 = Brother and Parent and hasChild some Parent
+Individual name = F2M11
+Missing Indivudual = F10M188
+
+Query 23 = Brother and Parent and hasChild some Parent
+Individual name = F2M11
+Missing Indivudual = F6M81
+
+Query 24 = Brother and Parent and hasChild some Parent
+Individual name = F2M11
+Missing Indivudual = F10M199
+
+Query 25 = Brother and Parent and hasChild some Parent
+Individual name = F3M45
+Missing Indivudual = F10M188
+
+Query 26 = Brother and Parent and hasChild some Parent
+Individual name = F3M45
+Missing Indivudual = F6M81
+
+Query 27 = Brother and Parent and hasChild some Parent
+Individual name = F3M45
+Missing Indivudual = F10M199
+
+Query 28 = Brother and Parent and hasChild some Parent
+Individual name = F6M71
+Missing Indivudual = F10M188
+
+Query 29 = Brother and Parent and hasChild some Parent
+Individual name = F6M71
+Missing Indivudual = F6M81
+
+Query 30 = Brother and Parent and hasChild some Parent
+Individual name = F6M71
+Missing Indivudual = F10M199
