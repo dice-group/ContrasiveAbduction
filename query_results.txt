@@ -1,0 +1,7 @@
+Query Results:
+
+Query: Child and PersonWithASibling and hasChild some PersonWithASibling
+Individual with Explanation: F2F15
+Missing Individual: F10F172
+Missing Axioms: [ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F172> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Brother> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://www.benchmark.org/family#F10F172>), ClassAssertion(<http://www.benchmark.org/family#Daughter> <http://www.benchmark.org/family#F10F172>)]
+

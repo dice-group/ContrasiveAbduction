@@ -1,0 +1,62 @@
+Query Results:
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F10M171
+Missing Individual: F10F172
+Missing Axioms: [ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F172> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Father> <http://www.benchmark.org/family#F10F172>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F10M171
+Missing Individual: F10F179
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Father> <http://www.benchmark.org/family#F10F179>), ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F179> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F10M171
+Missing Individual: F10F186
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F186> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Father> <http://www.benchmark.org/family#F10F186>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F1M4
+Missing Individual: F10F172
+Missing Axioms: [ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F172> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Father> <http://www.benchmark.org/family#F10F172>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F1M4
+Missing Individual: F10F179
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Father> <http://www.benchmark.org/family#F10F179>), ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F179> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F1M4
+Missing Individual: F10F186
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F186> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Father> <http://www.benchmark.org/family#F10F186>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F2M9
+Missing Individual: F10F172
+Missing Axioms: [ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F172> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Male> <http://www.benchmark.org/family#F10F172>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F2M9
+Missing Individual: F10F179
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F179> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Male> <http://www.benchmark.org/family#F10F179>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F2M9
+Missing Individual: F10F186
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Male> <http://www.benchmark.org/family#F10F186>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F186> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Female> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F6M78
+Missing Individual: F10F172
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Daughter> <http://example.org/ind1>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F172> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Male> <http://www.benchmark.org/family#F10F172>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F6M78
+Missing Individual: F10F179
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Daughter> <http://example.org/ind1>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F179> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Male> <http://www.benchmark.org/family#F10F179>)]
+
+Query: Male and hasChild some (Female and PersonWithASibling)
+Individual with Explanation: F6M78
+Missing Individual: F10F186
+Missing Axioms: [ClassAssertion(<http://www.benchmark.org/family#Daughter> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Male> <http://www.benchmark.org/family#F10F186>), ObjectPropertyAssertion(<http://www.benchmark.org/family#hasChild> <http://www.benchmark.org/family#F10F186> <http://example.org/ind1>), ClassAssertion(<http://www.benchmark.org/family#Sister> <http://example.org/ind1>)]
+
