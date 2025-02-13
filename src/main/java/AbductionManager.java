@@ -8,9 +8,11 @@ import org.semanticweb.owlapi.model.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 public class AbductionManager {
+
     public static void main(String[] args) throws OWLOntologyCreationException, IOException, OWLException {
         // Record the start time
         long startTime = System.currentTimeMillis();
@@ -23,19 +25,42 @@ public class AbductionManager {
         String inputPath = scanner.nextLine();
 
         // Read the input file
-        String inputContent = new String(Files.readAllBytes(Paths.get(inputPath)));
-        String[] lines = inputContent.split("\n");
+        List<String> lines = Files.readAllLines(Paths.get(inputPath));
 
-        // Read ontology path, namespace, query, and individual names from the input
-        String localOntologyPath = lines[0].split("=")[1].trim();
-        String ns = lines[1].split("=")[1].trim();
-        String queryStr = lines[2].split("=")[1].trim();
-        String individualWithExplan = lines[3].split("=")[1].trim();
-        String individualWithoutExplan = lines[4].split("=")[1].trim();
+        // Extract ontology path and namespace (appears only once)
+        String localOntologyPath = lines.get(0).split("=")[1].trim();
+        String ns = lines.get(1).split("=")[1].trim();
 
-        // Create an instance of the AbductionReasoner class and run the explanation generation
-        AbductionManager app = new AbductionManager();
-        app.run(ns, localOntologyPath, queryStr, individualWithExplan, individualWithoutExplan);
+        // Prepare output file path in resources folder
+        String outputFilePath = "src/main/resources/query_results.txt";
+        Files.write(Paths.get(outputFilePath), "Query Results:\n\n".getBytes());
+
+        // Iterate over the lines and process the queries
+        int i = 2;  // Start after the ontology path and namespace lines
+        while (i < lines.size()) {
+            // Skip empty lines
+            if (lines.get(i).trim().isEmpty()) {
+                i++;
+                continue;
+            }
+
+            // Extract query, individual with explanation, and individual without explanation
+            String queryStr = lines.get(i).split("=")[1].trim();
+            String individualWithExplan = lines.get(i + 1).split("=")[1].trim();
+            String individualWithoutExplan = lines.get(i + 2).split("=")[1].trim();
+
+            // Process each query
+            Set<OWLAxiom> missingAxioms = processQuery(ns, localOntologyPath, queryStr, individualWithExplan, individualWithoutExplan);
+
+            // Save results to file
+            String result = "Query: " + queryStr + "\nIndividual with Explanation: " + individualWithExplan +
+                    "\nMissing Individual: " + individualWithoutExplan +
+                    "\nMissing Axioms: " + missingAxioms + "\n\n";
+            Files.write(Paths.get(outputFilePath), result.getBytes(), StandardOpenOption.APPEND);
+
+            // Skip the next 3 lines for the current query (query, individualWithExplan, individualWithoutExplan)
+            i += 4;
+        }
 
         // Record the end time
         long endTime = System.currentTimeMillis();
@@ -45,11 +70,12 @@ public class AbductionManager {
         scanner.close();
     }
 
-    public void run(String ns, String localOntologyPath, String queryStr, String individualWithExplan, String individualWithoutExplan) throws OWLOntologyCreationException, OWLException, IOException {
+    public static Set<OWLAxiom> processQuery(String ns, String localOntologyPath, String queryStr, String individualWithExplan, String individualWithoutExplan) throws OWLOntologyCreationException, OWLException, IOException {
         PelletExplanation.setup();
         OntologyLoader ontologyLoader = new OntologyLoader();
         QueryParser queryParser = new QueryParser();
         AbductionReasoning abductionReasoning = new AbductionReasoning();
+
         OWLOntology ontology = ontologyLoader.loadOntology(localOntologyPath);
         PelletReasoner reasoner = ontologyLoader.getReasoner(ontology);
         PelletExplanation expGen = new PelletExplanation(reasoner);
@@ -59,28 +85,22 @@ public class AbductionManager {
         OWLNamedIndividual owlIndividualWithoutExplan = ontologyLoader.getIndividualByName(ontology, individualWithoutExplan);
         OWLClassExpression query = queryParser.parseQueryString(ns, queryStr);
 
-        System.out.println("Query:--> " + query);
-
         // Get instances of the query
-        Set<OWLNamedIndividual> individuals = ontologyLoader.getIndividualsForQuery(reasoner,query);
+        Set<OWLNamedIndividual> individuals = ontologyLoader.getIndividualsForQuery(reasoner, query);
+
         // Process the individuals
         for (OWLNamedIndividual selectedIndividual : individuals) {
             if (selectedIndividual.equals(owlIndividualWithExplan)) {
-
-                // Explain the classification of the selected individual
-                //todo : Number of explanation need to be decide
                 Set<Set<OWLAxiom>> explanations = expGen.getInstanceExplanations(selectedIndividual, query, 3);
                 Set<Set<OWLAxiom>> allCommonAxiomsSet = abductionReasoning.findCommonAxioms(explanations, ontology);
-                System.out.println("allCommonAxiomsSet : " + allCommonAxiomsSet);
-                System.out.println("allCommonAxiomsSet size: " + allCommonAxiomsSet.size());
-                // Iterate over each element in commonAxioms
+
                 for (Set<OWLAxiom> commonAxiomSet : allCommonAxiomsSet) {
-                    // Apply abduction reasoning for each common axiom set
-                    //abductionReasoning.applyAbductionForIndividuals(ontology, explanations, owlIndividualWithExplan, owlIndividualWithoutExplan, commonAxiomSet);
-                    Set<OWLAxiom> missingAxioms =  abductionReasoning.applyAbductionForIndividuals(ontology, owlIndividualWithExplan, owlIndividualWithoutExplan, commonAxiomSet);
+                    // Apply abduction reasoning and return missing axioms
+                    return abductionReasoning.applyAbductionForIndividuals(ontology, owlIndividualWithExplan, owlIndividualWithoutExplan, commonAxiomSet);
                 }
             }
         }
+
+        return Collections.emptySet(); // Return empty if no explanation found
     }
 }
-
