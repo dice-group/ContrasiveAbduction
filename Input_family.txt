@@ -1,4 +1,0 @@
-Ontology file path = E:/Workspace_Dice/DataSource/family.owl
-Name space = http://www.benchmark.org/family#
-Query = Parent and hasChild some Male
-Individual name = F8M132,F8M136,qewewrt
